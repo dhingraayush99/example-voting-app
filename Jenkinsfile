@@ -23,6 +23,20 @@ pipeline{
                 sh "docker push dhingra07/vote:v${BUILD_NUMBER}"
             }
         }
+        stage ("parallel testing"){
+            parallel{
+                stage("Linux Test"){
+                    steps{
+                        sh "echo linux"
+                        sh "sleep 180"
+                    }
+                }  
+                stage("Windows Test"){
+                    steps{
+                        sh "echo windows"
+                        sh "sleep 180"
+                    }
+                }         
         stage("Deploy"){
             steps{
                 sh "echo docker deploy"
