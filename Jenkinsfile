@@ -19,7 +19,7 @@ pipeline{
                     cd vote
                     docker build -t dhingra07/vote:v${BUILD_NUMBER} .
                     '''
-                sh "docker push dipesh017/vote:v${BUILD_NUMBER}"
+                sh "docker push dhingra07/vote:v${BUILD_NUMBER}"
             }
         }
         stage("Deploy"){
