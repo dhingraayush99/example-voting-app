@@ -1,5 +1,6 @@
 pipeline{
     agent{label 'worker'}
+     triggers{ cron('* * * * *') }
     options { 
         buildDiscarder(logRotator(numToKeepStr: '15'))
         disableConcurrentBuilds()
